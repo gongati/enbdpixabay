@@ -16,6 +16,7 @@
 		275B4AC62458B27A00BC244D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 275B4AC52458B27A00BC244D /* Assets.xcassets */; };
 		275B4AC92458B27A00BC244D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 275B4AC72458B27A00BC244D /* LaunchScreen.storyboard */; };
 		275B4AD42458B27A00BC244D /* ENBDPixabayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B4AD32458B27A00BC244D /* ENBDPixabayTests.swift */; };
+		275B4AE12458C2B400BC244D /* PBHitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B4AE02458C2B400BC244D /* PBHitsModel.swift */; };
 		3708638E067C07586D5F25C3 /* Pods_ENBDPixabay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B45CCBACBD40685D8F5A9A9D /* Pods_ENBDPixabay.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		275B4ACF2458B27A00BC244D /* ENBDPixabayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ENBDPixabayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		275B4AD32458B27A00BC244D /* ENBDPixabayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ENBDPixabayTests.swift; sourceTree = "<group>"; };
 		275B4AD52458B27A00BC244D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		275B4AE02458C2B400BC244D /* PBHitsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBHitsModel.swift; sourceTree = "<group>"; };
 		3F7E3DCD87C2C6FDD5B8FD53 /* Pods-ENBDPixabay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ENBDPixabay.release.xcconfig"; path = "Target Support Files/Pods-ENBDPixabay/Pods-ENBDPixabay.release.xcconfig"; sourceTree = "<group>"; };
 		7E155F227B48192F4766D4AC /* Pods-ENBDPixabayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ENBDPixabayTests.release.xcconfig"; path = "Target Support Files/Pods-ENBDPixabayTests/Pods-ENBDPixabayTests.release.xcconfig"; sourceTree = "<group>"; };
 		B45CCBACBD40685D8F5A9A9D /* Pods_ENBDPixabay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ENBDPixabay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +104,8 @@
 		275B4AB82458B27500BC244D /* ENBDPixabay */ = {
 			isa = PBXGroup;
 			children = (
+				275B4ADF2458C0A600BC244D /* Services */,
+				275B4ADE2458C09B00BC244D /* Model */,
 				275B4AB92458B27500BC244D /* AppDelegate.swift */,
 				275B4ABB2458B27500BC244D /* SceneDelegate.swift */,
 				275B4ABD2458B27500BC244D /* ViewController.swift */,
@@ -123,6 +127,21 @@
 			path = ENBDPixabayTests;
 			sourceTree = "<group>";
 		};
+		275B4ADE2458C09B00BC244D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				275B4AE02458C2B400BC244D /* PBHitsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		275B4ADF2458C0A600BC244D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		ED1D8D118A986F8937A96830 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,7 +150,6 @@
 				EB2E47AE4D5668F5D44A9C9F /* Pods-ENBDPixabayTests.debug.xcconfig */,
 				7E155F227B48192F4766D4AC /* Pods-ENBDPixabayTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -289,6 +307,7 @@
 				275B4ABA2458B27500BC244D /* AppDelegate.swift in Sources */,
 				275B4ABC2458B27500BC244D /* SceneDelegate.swift in Sources */,
 				275B4AC42458B27500BC244D /* ENBDPixabay.xcdatamodeld in Sources */,
+				275B4AE12458C2B400BC244D /* PBHitsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
