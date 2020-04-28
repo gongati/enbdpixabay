@@ -88,3 +88,14 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
+#Other
+*.dSYM.zip
+*.orig
+.DS_Store
+*~
+gofeedback.xcodeproj/project.xcworkspace/xcshareddata/
+
+# Additions
+.idea/
+.DS_Store
