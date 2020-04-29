@@ -31,4 +31,42 @@ class ENBDPixabayTests: XCTestCase {
         }
     }
 
+    func getHits() -> PBHitsResponse? {
+        
+        if let data = EnbdMockProvider.dataFromFileInTestBundle(fileName: "PBHits", withExtension: "json") {
+            
+            do {
+                
+                let decoder = JSONDecoder()
+                let jsonData = try decoder.decode(PBHitsResponse.self, from: data)
+                return jsonData
+            } catch {
+                
+                print("error:\(error)")
+            }
+        }
+        
+        return nil
+    }
+}
+
+class EnbdMockProvider {
+
+    static func dataFromFileInTestBundle(fileName: String, withExtension extension: String) -> Data? {
+        
+        guard let url = Bundle(for: EnbdMockProvider.self).url(forResource: fileName, withExtension: `extension`) else {
+            
+            return nil
+        }
+        
+        do {
+            
+            return try Data(contentsOf: url)
+        }
+        catch {
+            
+            return nil
+        }
+    }
+
 }

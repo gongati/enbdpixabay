@@ -6,7 +6,9 @@ target 'ENBDPixabay' do
   use_frameworks!
 
   # Pods for ENBDPixabay
-
+  pod 'SnapKit'
+  pod 'FBSnapshotTestCase'
+  
   target 'ENBDPixabayTests' do
     inherit! :search_paths
     # Pods for testing
