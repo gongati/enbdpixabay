@@ -15,6 +15,17 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func getImages(_ sender: UIButton) {
+        
+        let networkManager = PBNetworkManager()
+        
+        networkManager.getNewHits(page: 1, query: "apple") { (hits, error) in
+            
+            if error == nil {
+                print(hits)
+            }
+            
+        }
+    }
 }
 

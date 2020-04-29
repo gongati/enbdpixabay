@@ -7,3 +7,25 @@
 //
 
 import Foundation
+
+class PBHitsListViewModel {
+    
+    var onShouldOpenHitDetails: ((PBHit) -> Void)?
+    var onShouldRefreshItems: (() -> Void)?
+    
+    var hitsList: [PBHit]
+    
+    private var currentPage: Int
+    
+    init() {
+        
+        self.hitsList = []
+        self.currentPage = 0
+    }
+    
+    func loadHits() {
+        
+        
+    }
+
+}
