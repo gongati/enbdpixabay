@@ -31,9 +31,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="f8s-s2-ktg">
-                                <rect key="frame" x="0.0" y="132" width="414" height="764"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f8s-s2-ktg">
+                                <rect key="frame" x="0.0" y="88" width="414" height="788"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListCell" rowHeight="100" id="ebG-8z-BDe" customClass="PBHitListViewCell" customModule="ENBDPixabay" customModuleProvider="target">
@@ -108,17 +107,29 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <searchBar contentMode="redraw" text="apple" id="vCy-oa-ngz">
-                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <searchBar contentMode="redraw" text="apple" translatesAutoresizingMaskIntoConstraints="NO" id="vCy-oa-ngz">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="110-ie-2IC"/>
+                                </constraints>
                                 <textInputTraits key="textInputTraits" returnKeyType="search"/>
                             </searchBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="f8s-s2-ktg" firstAttribute="top" secondItem="vCy-oa-ngz" secondAttribute="bottom" symbolic="YES" id="9L9-B6-fh9"/>
+                            <constraint firstItem="vCy-oa-ngz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="D25-lm-kvf"/>
+                            <constraint firstItem="f8s-s2-ktg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="I7P-sb-qJM"/>
+                            <constraint firstAttribute="bottom" secondItem="f8s-s2-ktg" secondAttribute="bottom" constant="20" symbolic="YES" id="KnG-na-jTt"/>
+                            <constraint firstItem="f8s-s2-ktg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="VhL-9k-iuA"/>
+                            <constraint firstItem="vCy-oa-ngz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ePa-Lm-aK1"/>
+                            <constraint firstItem="vCy-oa-ngz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="oD1-6E-COy"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ew4-E3-eaN"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="searchBar" destination="vCy-oa-ngz" id="I7o-Yp-2Ay"/>
                         <outlet property="tableView" destination="f8s-s2-ktg" id="0wm-Ln-Ime"/>
