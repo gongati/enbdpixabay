@@ -70,6 +70,6 @@ class PBHitsListViewModel {
     
     func performActionWith(hit: PBHit) {
 
-        
+        self.onShouldOpenHitDetails?(hit)
     }
 }

@@ -21,6 +21,7 @@ class PBHitsListViewController: UIViewController {
         super.viewDidLoad()
         
         self.hideKeyboardWhenTappedAround()
+        self.title = "Pixabay"
         
         self.setupViewModel()
         self.viewModel.fetchNextSetofHits()
@@ -34,7 +35,11 @@ class PBHitsListViewController: UIViewController {
         self.viewModel.onShouldOpenHitDetails = { [weak self] hit in
             
             //open details viewcontroller with the hit
-            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            if let vc = storyboard.instantiateViewController(withIdentifier: "HITDETAILS") as? PBHitDetailsViewController {
+                vc.hit = hit
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }
         }
         
         self.viewModel.onShouldRefreshItems = { [weak self] in
@@ -108,6 +113,11 @@ extension PBHitsListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         //self.attachSpinner(value: true)
+        if self.viewModel.hitsList.count > indexPath.row {
+            
+            let hit = self.viewModel.hitsList[indexPath.row]
+            self.viewModel.performActionWith(hit: hit)
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -159,6 +169,7 @@ extension UIViewController {
     }
 }
 
+// MARK: - KeyBoard
 extension UIViewController {
     
     func hideKeyboardWhenTappedAround() {

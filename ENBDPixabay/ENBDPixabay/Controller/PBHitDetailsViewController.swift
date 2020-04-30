@@ -24,6 +24,10 @@ class PBHitDetailsViewController: UIViewController {
         
         super.viewDidLoad()
         self.title = self.hit?.tags
+        if let hit = self.hit {
+            
+            self.updateViews(hit: hit)
+        }
     }
     
     func updateViews(hit: PBHit) {
