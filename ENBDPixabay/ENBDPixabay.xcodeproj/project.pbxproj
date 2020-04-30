@@ -27,6 +27,9 @@
 		275B4AF8245A16BC00BC244D /* PBNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B4AF7245A16BC00BC244D /* PBNetworkManager.swift */; };
 		275B4AFA245A175700BC244D /* PBNetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B4AF9245A175700BC244D /* PBNetworkRouter.swift */; };
 		275B4AFC245A1AF700BC244D /* PBHitsEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B4AFB245A1AF700BC244D /* PBHitsEndPoint.swift */; };
+		275B4B01245AA5AC00BC244D /* PBBackgroundShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B4B00245AA5AC00BC244D /* PBBackgroundShadowView.swift */; };
+		275B4B03245AC59500BC244D /* PBHitListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B4B02245AC59500BC244D /* PBHitListViewCell.swift */; };
+		275B4B05245AD58000BC244D /* PBLoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275B4B04245AD58000BC244D /* PBLoadingCell.swift */; };
 		3708638E067C07586D5F25C3 /* Pods_ENBDPixabay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B45CCBACBD40685D8F5A9A9D /* Pods_ENBDPixabay.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +68,9 @@
 		275B4AF7245A16BC00BC244D /* PBNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBNetworkManager.swift; sourceTree = "<group>"; };
 		275B4AF9245A175700BC244D /* PBNetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBNetworkRouter.swift; sourceTree = "<group>"; };
 		275B4AFB245A1AF700BC244D /* PBHitsEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBHitsEndPoint.swift; sourceTree = "<group>"; };
+		275B4B00245AA5AC00BC244D /* PBBackgroundShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBBackgroundShadowView.swift; sourceTree = "<group>"; };
+		275B4B02245AC59500BC244D /* PBHitListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBHitListViewCell.swift; sourceTree = "<group>"; };
+		275B4B04245AD58000BC244D /* PBLoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBLoadingCell.swift; sourceTree = "<group>"; };
 		3F7E3DCD87C2C6FDD5B8FD53 /* Pods-ENBDPixabay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ENBDPixabay.release.xcconfig"; path = "Target Support Files/Pods-ENBDPixabay/Pods-ENBDPixabay.release.xcconfig"; sourceTree = "<group>"; };
 		7E155F227B48192F4766D4AC /* Pods-ENBDPixabayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ENBDPixabayTests.release.xcconfig"; path = "Target Support Files/Pods-ENBDPixabayTests/Pods-ENBDPixabayTests.release.xcconfig"; sourceTree = "<group>"; };
 		B45CCBACBD40685D8F5A9A9D /* Pods_ENBDPixabay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ENBDPixabay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +176,7 @@
 		275B4AE42459735300BC244D /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				275B4AFF245AA58200BC244D /* Custom Views */,
 				275B4AC72458B27A00BC244D /* LaunchScreen.storyboard */,
 				275B4ABF2458B27500BC244D /* Main.storyboard */,
 			);
@@ -202,6 +209,16 @@
 				275B4AF02459FBDC00BC244D /* PBHits.json */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		275B4AFF245AA58200BC244D /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				275B4B02245AC59500BC244D /* PBHitListViewCell.swift */,
+				275B4B00245AA5AC00BC244D /* PBBackgroundShadowView.swift */,
+				275B4B04245AD58000BC244D /* PBLoadingCell.swift */,
+			);
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 		ED1D8D118A986F8937A96830 /* Pods */ = {
@@ -366,15 +383,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				275B4B03245AC59500BC244D /* PBHitListViewCell.swift in Sources */,
 				275B4AFC245A1AF700BC244D /* PBHitsEndPoint.swift in Sources */,
 				275B4ABE2458B27500BC244D /* ViewController.swift in Sources */,
 				275B4AEE2459750100BC244D /* PBHitDetailsViewModel.swift in Sources */,
 				275B4AF6245A0FFF00BC244D /* Reachability.swift in Sources */,
 				275B4AEC245974E000BC244D /* PBHitsListViewModel.swift in Sources */,
+				275B4B05245AD58000BC244D /* PBLoadingCell.swift in Sources */,
 				275B4AE32458C4D000BC244D /* PBHitsService.swift in Sources */,
 				275B4AFA245A175700BC244D /* PBNetworkRouter.swift in Sources */,
 				275B4ABA2458B27500BC244D /* AppDelegate.swift in Sources */,
 				275B4ABC2458B27500BC244D /* SceneDelegate.swift in Sources */,
+				275B4B01245AA5AC00BC244D /* PBBackgroundShadowView.swift in Sources */,
 				275B4AC42458B27500BC244D /* ENBDPixabay.xcdatamodeld in Sources */,
 				275B4AF8245A16BC00BC244D /* PBNetworkManager.swift in Sources */,
 				275B4AE12458C2B400BC244D /* PBHitsModel.swift in Sources */,
