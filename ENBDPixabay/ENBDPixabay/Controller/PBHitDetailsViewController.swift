@@ -6,4 +6,9 @@
 //  Copyright © 2020 Vishnu. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class PBHitDetailsViewController: UIViewController {
+
+    
+}
