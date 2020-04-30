@@ -30,8 +30,11 @@ class ENBDPixabayTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+}
 
-    func getHits() -> PBHitsResponse? {
+class EnbdMockProvider {
+
+    static func getHits() -> PBHitsResponse? {
         
         if let data = EnbdMockProvider.dataFromFileInTestBundle(fileName: "PBHits", withExtension: "json") {
             
@@ -48,9 +51,6 @@ class ENBDPixabayTests: XCTestCase {
         
         return nil
     }
-}
-
-class EnbdMockProvider {
 
     static func dataFromFileInTestBundle(fileName: String, withExtension extension: String) -> Data? {
         
@@ -68,5 +68,4 @@ class EnbdMockProvider {
             return nil
         }
     }
-
 }

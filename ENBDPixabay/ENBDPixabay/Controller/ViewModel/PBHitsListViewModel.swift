@@ -22,9 +22,14 @@ class PBHitsListViewModel {
     private var searchQuery: String
     private var isNewQuery: Bool
     
-    init() {
+    init(hitsList:[PBHit]? = nil) {
         
-        self.hitsList = []
+        if let list = hitsList {
+            
+            self.hitsList = list
+        } else {
+            self.hitsList = []
+        }
         self.currentPage = 0
         self.searchQuery = "apple"
         self.isNewQuery = false

@@ -111,7 +111,6 @@ extension PBHitsListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        //self.attachSpinner(value: true)
         if self.viewModel.hitsList.count > indexPath.row {
             
             let hit = self.viewModel.hitsList[indexPath.row]

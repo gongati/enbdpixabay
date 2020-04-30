@@ -21,6 +21,10 @@ class PBHitsListViewControllerTests: FBSnapshotTestCase {
         
         let listVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HITSLIST") as! PBHitsListViewController
         
+        let hitsList = EnbdMockProvider.getHits()
+        let viewModel = PBHitsListViewModel(hitsList: hitsList?.hits)
+        listVC.viewModel = viewModel
+        
         FBSnapshotVerifyView(listVC.view)
         FBSnapshotVerifyLayer(listVC.view.layer)
     }
