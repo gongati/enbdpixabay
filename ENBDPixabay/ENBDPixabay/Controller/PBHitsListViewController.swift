@@ -8,12 +8,13 @@
 
 import UIKit
 
-class PBHitsListViewController: UITableViewController {
+class PBHitsListViewController: UIViewController {
     
     var viewModel: PBHitsListViewModel = PBHitsListViewModel()
     
     @IBOutlet weak var searchBar: UISearchBar!
-    
+    @IBOutlet weak var tableView: UITableView!
+
     // MARK: - View life cycle
     override func viewDidLoad() {
         
@@ -24,6 +25,8 @@ class PBHitsListViewController: UITableViewController {
         self.setupViewModel()
         self.viewModel.fetchNextSetofHits()
         self.searchBar.delegate = self
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
     }
     
     private func setupViewModel() {
@@ -61,14 +64,14 @@ class PBHitsListViewController: UITableViewController {
 }
 
 // MARK: - UITableViewDelegte
-extension PBHitsListViewController {
+extension PBHitsListViewController: UITableViewDelegate, UITableViewDataSource {
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         
         return 2
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if section == 0 {
             
@@ -81,7 +84,7 @@ extension PBHitsListViewController {
         return 0
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as! PBHitListViewCell
@@ -101,12 +104,12 @@ extension PBHitsListViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         //self.attachSpinner(value: true)
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         if indexPath.section == 0 {
             
@@ -117,7 +120,7 @@ extension PBHitsListViewController {
         }
     }
     
-    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         let offsetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
@@ -155,17 +158,17 @@ extension UIViewController {
     }
 }
 
-extension UITableViewController {
+extension UIViewController {
     
     func hideKeyboardWhenTappedAround() {
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UITableViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
-        self.tableView.addGestureRecognizer(tap)
+        self.view.addGestureRecognizer(tap)
     }
 
     @objc func dismissKeyboard() {
         
-        self.tableView.endEditing(true)
+        self.view.endEditing(true)
     }
 }

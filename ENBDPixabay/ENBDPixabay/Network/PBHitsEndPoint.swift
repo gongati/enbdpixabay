@@ -36,10 +36,11 @@ extension HitsApi: EndPointType {
     var task: HTTPTask {
         switch self {
         case .newHitsList(let page, let query):
+            let newQuery:String = query.replacingOccurrences(of: " ", with: "+")
             return .requestParameters(bodyParameters: nil,
                                       bodyEncoding: .urlEncoding,
                                       urlParameters: ["page":page,
-                                                      "q":query,
+                                                      "q":newQuery,
                                                       "key":PBNetworkManager.PixabayAPIKey,
                                                       "image_type":"photo"])
         default:

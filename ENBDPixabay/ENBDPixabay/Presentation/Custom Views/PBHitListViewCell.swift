@@ -20,6 +20,7 @@ class PBHitListViewCell: UITableViewCell {
         self.titleLabel.text = hit.tags
         self.subLabel.text = "by \(hit.user ?? "")"
         self.likesButton.setTitle("\(hit.likes ?? 0)", for: .normal)
+        self.iconImageView.image = nil
 
         if let logoUrl = hit.previewURL {
 
