@@ -30,16 +30,15 @@ class PBHitsListViewController: UIViewController {
         self.tableView.dataSource = self
     }
     
+    // MARK: - View setup
     private func setupViewModel() {
         
         self.viewModel.onShouldOpenHitDetails = { [weak self] hit in
             
             //open details viewcontroller with the hit
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            if let vc = storyboard.instantiateViewController(withIdentifier: "HITDETAILS") as? PBHitDetailsViewController {
-                vc.hit = hit
-                self?.navigationController?.pushViewController(vc, animated: true)
-            }
+            let detailsViewModel = PBHitDetailsViewModel(hit: hit)
+            let vc = PBHitDetailsViewController(viewModel: detailsViewModel)
+            self?.navigationController?.pushViewController(vc, animated: true)
         }
         
         self.viewModel.onShouldRefreshItems = { [weak self] in
