@@ -10,7 +10,7 @@ import UIKit
 
 class PBHitsListViewController: UIViewController {
     
-    var viewModel: PBHitsListViewModel = PBHitsListViewModel()
+    var viewModel = PBHitsListViewModel()
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
@@ -34,6 +34,7 @@ class PBHitsListViewController: UIViewController {
         self.viewModel.onShouldOpenHitDetails = { [weak self] hit in
             
             //open details viewcontroller with the hit
+            
         }
         
         self.viewModel.onShouldRefreshItems = { [weak self] in

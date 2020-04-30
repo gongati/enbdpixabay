@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+class PBHitDetailsViewModel {
+    
+    var hit:PBHit?
+    
+    init() {
+        
+    }
+}
